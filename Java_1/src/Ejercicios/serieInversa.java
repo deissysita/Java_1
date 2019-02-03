@@ -19,6 +19,7 @@ public class serieInversa {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System. out. println("Esta clase suma los numeros pedido por teclado y muestra la serie inversa");
 		invertirSerie();
 	}
 	private static void invertirSerie() {

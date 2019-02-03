@@ -21,7 +21,8 @@ public class factorial {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	datosFactorial();
+		System. out. println("Esta clase calcula el factorial de un numero pedido por teclado");
+		datosFactorial();
 	}
 	
 	private static void datosFactorial() {

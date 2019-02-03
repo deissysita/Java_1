@@ -19,6 +19,7 @@ public class fibonacci {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System. out. println("Esta clase muestra la serie fibonacci hasta un numero pedido por teclado");
 		serieFib();
 	}
 	private static void serieFib() {

@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * @author Deissy Coral
- * Esta clase calcula si un numero pedido por teclado es primovvv
+ * Esta clase calcula si un numero pedido por teclado es primo
  */
 public class primo {
 
@@ -19,6 +19,7 @@ public class primo {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System. out. println("Esta clase calcula si un numero pedido por teclado es primo");
 		procesoPrimo();
 	}
 	private static void procesoPrimo() {

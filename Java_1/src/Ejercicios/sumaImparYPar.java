@@ -18,6 +18,7 @@ public class sumaImparYPar {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System. out. println("Esta clase suma los numeros pares e impares a partir de un numero pedido por teclado");
 		sumarParesImpares();
 	}
 

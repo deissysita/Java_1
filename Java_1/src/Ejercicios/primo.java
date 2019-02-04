@@ -41,10 +41,10 @@ public class primo {
 	private static void calcular(int cadena) {
 		// TODO Auto-generated method stub
 		int ciclo=1;
-		esPrimo="NO";
+		esPrimo="SI";
 		for (ciclo=2;ciclo<cadena;ciclo++) {
 			if(cadena%ciclo==0) {
-				esPrimo="SI";
+				esPrimo="NO";
 				break;
 			}
 		}

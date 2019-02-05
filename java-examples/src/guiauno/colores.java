@@ -8,7 +8,7 @@ public class colores {
         int num1, num2;
         Scanner leer =new Scanner (System.in);
         System.out.println("Bienvenido a combinación de colores");
-        System.out.println("Este programa realiza combina colores primarios\nPor favor digite la opción");
+        System.out.println("Este programa combina colores primarios\nPor favor digite la opción");
         System.out.println("1. Amarillo");
         System.out.println("2. Azul");
         System.out.println("3. Rojo");

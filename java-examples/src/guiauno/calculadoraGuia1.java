@@ -15,7 +15,8 @@ public class calculadoraGuia1 {
         System.out.println("4. División");
         System.out.println("5. Cuadrado de un número");
         System.out.println("6. Porcentaje de un número");
-        System.out.println("7. Salir");
+        System.out.println("7. Raiz cuadrada de un numero");
+        System.out.println("8. Salir");
         
         int opc = 0;
               
@@ -96,8 +97,15 @@ public class calculadoraGuia1 {
                 System.out.println("El porcentaje es " + porc);
                 break;
                 }
-            
             case 7:
+	            {
+	            	System.out.println("Por favor digite el número");
+	                num1= captura .nextInt();
+	                double raiz=Math.sqrt(num1);
+	                System.out.println("La raiz es " + raiz);
+	                break;
+	            }
+            case 8:
                 {
                 System.out.println("Gracias por participar");
                 break;

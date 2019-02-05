@@ -9,7 +9,6 @@ public class Dado {
     Random azar =new Random();
     Scanner leer =new Scanner (System.in);
     String continuar="N";
-    int cont=0;
      
     int dado1;
     int dado2;

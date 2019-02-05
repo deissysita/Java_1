@@ -28,10 +28,10 @@ public class Triangulo {
                         if (a1==90 || a2==90 || a3==90) {
                             System.out.println("El triángulo es: Triangulo rectángulo");
                     }
-                        if (a1<90 && a2<90 && a3<90) {
+                        else if (a1<90 && a2<90 && a3<90) {
                             System.out.println("El triángulo es: Triángulo acutángulo");
                     }
-                        if (a1>90 || a2>90 || a3>90) {
+                        else if (a1>90 || a2>90 || a3>90) {
                         System.out.println("El triángulo es: Triángulo obtusángulo");
                     }
                 }
@@ -52,10 +52,10 @@ public class Triangulo {
                     if (lc1==lc2 && lc1==ll && ll==lc2){
                         System.out.println("El triángulo es: Triángulo equilátero");
                     }
-                    if (lc1==lc2 || lc1==ll || ll==lc2){
+                    else if (lc1==lc2 || lc1==ll || ll==lc2){
                         System.out.println("El triángulo es: Triángulo isósceles");
                     }
-                    if (lc1!=lc2 || lc1!=ll || ll!=lc2){
+                    else if (lc1!=lc2 || lc1!=ll || ll!=lc2){
                         System.out.println("El triángulo es; Triángulo escaleno");
                     }
                 }

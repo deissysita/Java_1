@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class AscendenteDescendente {
    
     public static void main(String[] args) {
-        int num1,num2,num3, mayor, menor,medio;
+        int num1,num2,num3, mayor, menor,medio, promedio;
         
         Scanner leer = new Scanner (System.in);
-        System.out.println("Bienvenido a su programa Ascendente y Descendente");
+        System.out.println("Bienvenido a su programa Ascendente, Descendente y Promedio");
         System.out.println("Este programa le permite organizar sus número de forma ascendente \no descendente si usted lo desea");
                  
         System.out.println("Por favor digite el primer número:");
@@ -53,7 +53,7 @@ public class AscendenteDescendente {
                 }
             
                 System.out.println("Por favor digite la opcion  en la que desea ver sus numeros");
-                System.out.println("1. Ascendente\n2. Descendente");
+                System.out.println("1. Ascendente\n2. Descendente\n3. Promedio");
                 int opc;
                 
                 opc=leer.nextInt();
@@ -71,6 +71,13 @@ public class AscendenteDescendente {
                         System.out.println(mayor + " " + medio+ " "+ menor);
                 
                         break;
+                    
+                    case 3:    
+                        promedio=(num1+num2+num3)/3;
+                            System.out.println("El promedio de los numeros ingresados es:");
+                            System.out.println(promedio);
+                    
+                            break;
                     default:
                         System.out.println("¡Error, opción no valida!");
          }

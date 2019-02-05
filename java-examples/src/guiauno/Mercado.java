@@ -7,9 +7,9 @@ public class Mercado {
     public static void main(String[] args) {
     
         Scanner leer= new Scanner(System.in);
-        double valor, iva=1.16, subtotal;
-        byte cantidad;
-        boolean canasta;
+        double valor=0, iva=1.16, subtotal=0;
+        int cantidad;
+        String canasta;
         String art;
     
         System.out.println("Bienvenido a su programa costo de su mercado");
@@ -21,18 +21,17 @@ public class Mercado {
         System.out.println("Por favor asigne su valor");
                 valor=leer.nextDouble();
         System.out.println("Por favor digite la cantidad a llevar");
-                cantidad=leer.nextByte();
-        System.out.println("Â¿El producto pertenece a la canasta familiar?\n Si digite 'True' \n No digite 'False'");    
-                canasta=leer.nextBoolean();
-                if(canasta == false) {
+                cantidad=leer.nextInt();
+        System.out.println("¿El producto pertenece a la canasta familiar? (S/N)");    
+                canasta=leer.next();
+                if(canasta.equals("S")) {
                 subtotal=(valor*cantidad)*iva;    
                 }
                 else {
-                canasta = false;
                 subtotal=valor*cantidad;
                 }
         System.out.println(" Producto " +art+ " cantidad " +cantidad+ " total " +subtotal);
-        leer.close();
+       leer.close();
    }
      
 }

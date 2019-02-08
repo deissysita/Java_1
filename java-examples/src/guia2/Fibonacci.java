@@ -9,7 +9,7 @@ public class Fibonacci {
         
         //1. Solicitar al usuario el número que representará la cantidad de numeros de
         //la serie Fibonacci
-        int multiplo=1, modificado=0;
+        int multiplo=1;
         System.out.println("Bienvenido a su programa Fibonacci");
         System.out.println("Este programa le mostrara los números de la serie teniendo en cuenta el número que usted digite");
         System.out.println("Por favor digite la cantidad de números que desea ver: ");
@@ -34,7 +34,6 @@ public class Fibonacci {
             int suma = numero1 + numero2;
             numero1 = numero2;
             numero2 = suma;
-            //modificado=suma*multiplo;
             System.out.println(suma*multiplo);        
         }
         captura.close();

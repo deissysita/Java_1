@@ -17,6 +17,10 @@ public class Vectorx {
             
             int x = leer.nextInt();
             int[]vector = new int[x];  
+            int[]vectorAux = new int[x];
+            int cont=0,veces=0;
+            boolean igual=false;
+            
             System.out.println("Por favor, digite la opción que desee:");    
             System.out.println("1. Ascendente");
             System.out.println("2. Descendente");
@@ -24,43 +28,67 @@ public class Vectorx {
          
         opc=leer.nextByte();
         
+        
+        
         switch (opc){
             case 1:{
-            System.out.println("Digite los numeros de su vector"); 
+            	System.out.println("Digite los numeros de su vector");
                 for (int i =0; i<x; i++){
-                do{
-                    vector[i]=leer.nextInt();
-                    if (vector[i]==vector[i]){
-                    System.out.println("Error los números no deben ser iguales."
-                    + "Por favor digite nuevamente el número");
-                        } 
-                    else if (vector[i]>vector[i]){
-                        System.out.println(vector[i]);    
-                        i--;
-                    }
-                    else if (vector[i]<vector[i]){
-                        System.out.println(vector[i]);    
-                        i--;
-                    }
-                }
-                while (vector[i]==vector[i]);
-                }
-                for (int i=0; i<x;i++){
-                    System.out.print(vector[i]+" ");
-                    }
-                System.out.println();      
+                	vector[i]=leer.nextInt();
+                }       
+            //Ordenamiento
+            for (int i =0; i<x; i++){
+            	cont=0;
+            	veces=0;
+            	for (int j =0; j<x; j++){
+            		if (vector[i]>=vector[j]) {
+            			cont++;
+            		}
+            		if (vector[i]==vector[j]) {
+            			veces++;
+            			igual=true;
+            		}
+            	}
+            	vectorAux[cont-1]=vector[i];
+            	if (igual) {
+            		for (int cop=1;cop<veces;cop++) {
+            			vectorAux[cont-1-cop]=vector[i];
+            		}
+            	}
+            }                      
+            for (int i=0; i<x;i++){
+                System.out.print(vectorAux[i]+" ");
             }      
             break;
-          
+            }
             case 2:{
-            System.out.println("Digite los números de su vector"); 
-                    for (int i =0; i<x; i++){
-                    vector[i]=leer.nextInt();
-                    }
-            for (int i=0; i<x;i++){
-            System.out.print(vector[i]+" ");
+            	System.out.println("Digite los numeros de su vector");
+                for (int i =0; i<x; i++){
+                	vector[i]=leer.nextInt();
                 }
-              System.out.println();
+            	//Ordenamiento
+                for (int i =0; i<x; i++){
+                	cont=0;
+                	veces=0;
+                	for (int j =0; j<x; j++){
+                		if (vector[i]<=vector[j]) {
+                			cont++;
+                		}
+                		if (vector[i]==vector[j]) {
+                			veces++;
+                			igual=true;
+                		}
+                	}
+                	vectorAux[cont-1]=vector[i];
+                	if (igual) {
+                		for (int cop=1;cop<veces;cop++) {
+                			vectorAux[cont-1-cop]=vector[i];
+                		}
+                	}                	
+                }
+                for (int i=0; i<x;i++){
+                    System.out.print(vectorAux[i]+" ");
+                }
                 break;
             }
             case 3:

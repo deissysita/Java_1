@@ -1,4 +1,4 @@
-package guia2.punto10;
+package guia2;
 
 import java.util.Scanner;
 
@@ -24,6 +24,8 @@ public class Factura {
 		};
 		
 		int idProducto = 0;
+		double pago=0;
+		double regreso=0;
 		double cantidadProducto = 0;
 		int productosIngresados = 0;
 		Object[][] matrizFactura = new Object[FILAS_FACTURA][COLUMNAS_FACTURA];
@@ -35,7 +37,7 @@ public class Factura {
 			idProducto = leer.nextInt();
 			System.out.print("Digite el la cantidad del producto: ");
 			cantidadProducto = leer.nextDouble();
-			matrizFactura[i][0] = i;
+			matrizFactura[i][0] = i+1;
 			matrizFactura[i][1] = idProducto;
 			matrizFactura[i][2] = obtenerNombreProducto(matrizProductos, idProducto);
 			matrizFactura[i][3] = cantidadProducto;
@@ -69,6 +71,14 @@ public class Factura {
 			}			
 		}
 		System.out.println("Valor total a pagar: " + String.valueOf(valorTotalFactura));
+
+		do{
+			System.out.println("\nDigite el pago, recuerde que debe ser igual o superior al valor de la factura ("+String.valueOf(valorTotalFactura)+"):");
+			pago=leer.nextDouble();
+		}while(pago<valorTotalFactura);
+		
+		regreso=calcularCambio(pago,valorTotalFactura);
+		System.out.println("\nSu cambio es: "+regreso+"... Gracias por su compra!!!");
 		leer.close();
 	}
 	
@@ -115,5 +125,9 @@ public class Factura {
 		
 		return valorIva;
 	} 
+	
+	private static double calcularCambio(double pago,double valorTotalFactura){
+		return pago-valorTotalFactura;
+	}
 
 }

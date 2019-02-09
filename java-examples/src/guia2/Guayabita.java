@@ -81,12 +81,10 @@ public class Guayabita {
 			
 			if(acumulado == 0) {
 				System.out.print("\n\nEl acumulado llego a 0");
-				//System.out.print("\nGanador: " + vcJugadores[i]);
 				System.out.print("\nFin del juego");
 			}
 		}
 		
 		leer.close();
 	}
-
 }

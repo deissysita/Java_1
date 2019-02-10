@@ -130,34 +130,51 @@ public class srmd extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void sumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumaActionPerformed
-       numero1= Double.parseDouble(num1.getText());
+       try {
+    	numero1= Double.parseDouble(num1.getText());
        numero2= Double.parseDouble(num2.getText());
        respuesta=numero1+numero2;
        resultado.setText("" +respuesta);
+       }catch(Exception e) {
+    	   resultado.setText("Deben existir dos valores");
+       }
+       
     }//GEN-LAST:event_sumaActionPerformed
 
     private void restaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaActionPerformed
-        numero1= Double.parseDouble(num1.getText());
+        try {
+    	numero1= Double.parseDouble(num1.getText());
         numero2= Double.parseDouble(num2.getText());
         respuesta=numero1-numero2;
         resultado.setText("" +respuesta);
+        }catch(Exception e) {
+     	   resultado.setText("Deben existir dos valores");
+        }
     }//GEN-LAST:event_restaActionPerformed
 
     private void multiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplicacionActionPerformed
-       numero1= Double.parseDouble(num1.getText());
+       try {
+    	numero1= Double.parseDouble(num1.getText());
        numero2= Double.parseDouble(num2.getText());
        respuesta=numero1*numero2;
        resultado.setText("" +respuesta);
+       }catch(Exception e) {
+    	   resultado.setText("Deben existir dos valores");
+       }
     }//GEN-LAST:event_multiplicacionActionPerformed
 
     private void divisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisionActionPerformed
-       numero1= Double.parseDouble(num1.getText());
+       try{
+    	   numero1= Double.parseDouble(num1.getText());
        numero2= Double.parseDouble(num2.getText());
        if(numero2<=0){
            System.out.println("Error no se puede dividir por un numero menor o igual a 0");
        }
        respuesta=numero1/numero2;
        resultado.setText("" +respuesta);
+       }catch(Exception e) {
+    	   resultado.setText("Deben existir dos valores");
+       }
     }//GEN-LAST:event_divisionActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed

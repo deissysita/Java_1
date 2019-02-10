@@ -23,9 +23,16 @@ public class Matriz {
                matriz[i][j]=azar.nextInt(10)+1;
                 }
          }
+        
+        System.out.print("\n\t");
+        for (int j=0; j<y; j++){ 
+        	System.out.print("Col "+j+"\t");}
+        System.out.println();
+        
         for (int i=0; i<x; i++){
-            for (int j=0; j<y; j++){
-            System.out.print(matriz[i][j]+" ");
+        	System.out.print("Fila "+i+"\t");
+        	for (int j=0; j<y; j++){
+            	System.out.print(matriz[i][j]+"\t");
             } 
             System.out.println();
            }

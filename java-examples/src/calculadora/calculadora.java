@@ -1,11 +1,15 @@
 package calculadora;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class calculadora extends javax.swing.JFrame {
     
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	String teclado,operacion;
+	String teclado="0",operacion;
     int num1,num2,sumar,restar,mult,divi;
     public calculadora() {
         initComponents();
@@ -39,8 +43,14 @@ public class calculadora extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         resultado.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
+        resultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resultadoActionPerformed(evt);
+            }
+        });
 
         numeros.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
+        numeros.setText("0");
         numeros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 numerosActionPerformed(evt);
@@ -85,7 +95,7 @@ public class calculadora extends javax.swing.JFrame {
 
         clear.setBackground(new java.awt.Color(204, 255, 255));
         clear.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
-        clear.setText("C");
+        clear.setText("CE");
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearActionPerformed(evt);
@@ -95,6 +105,11 @@ public class calculadora extends javax.swing.JFrame {
         enter.setBackground(new java.awt.Color(204, 255, 255));
         enter.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         enter.setText("Enter");
+        enter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterActionPerformed(evt);
+            }
+        });
 
         siete.setBackground(new java.awt.Color(204, 255, 255));
         siete.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
@@ -197,7 +212,7 @@ public class calculadora extends javax.swing.JFrame {
 
         clear1.setBackground(new java.awt.Color(204, 255, 255));
         clear1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
-        clear1.setText("CE");
+        clear1.setText("C");
         clear1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clear1ActionPerformed(evt);
@@ -302,23 +317,23 @@ public class calculadora extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void sumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumaActionPerformed
-        operacion=sumar+"+";
-        suma.setText(teclado);
+    	teclado=teclado+"+";
+    	numeros.setText(teclado);
     }//GEN-LAST:event_sumaActionPerformed
 
     private void restaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaActionPerformed
-        operacion=restar+"-";
-        resta.setText(teclado);
+    	teclado=teclado+"-";
+    	numeros.setText(teclado);
     }//GEN-LAST:event_restaActionPerformed
 
     private void multiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiActionPerformed
-        operacion=mult+"*";
-        multi.setText(teclado);
+    	teclado=teclado+"*";
+    	numeros.setText(teclado);
     }//GEN-LAST:event_multiActionPerformed
 
     private void divActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divActionPerformed
-       operacion=divi+"/";
-       div.setText(teclado);
+    	teclado=teclado+"/";
+    	numeros.setText(teclado);
     }//GEN-LAST:event_divActionPerformed
  
   
@@ -327,59 +342,89 @@ public class calculadora extends javax.swing.JFrame {
         cadena=numeros.getText();
         
         if(cadena.length()>0){
-            cadena=cadena.substring(0, cadena.length()-1);
-            numeros.setText(cadena);
+        	teclado=cadena.substring(0, cadena.length()-1);
+            numeros.setText(teclado);
         }
             
     }//GEN-LAST:event_clearActionPerformed
 
     private void ceroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceroActionPerformed
-        teclado=teclado+"0";
+        if (teclado.equals("0")) {
+        	teclado="";
+        }
+    	teclado=teclado+"0";
         numeros.setText(teclado);
     }//GEN-LAST:event_ceroActionPerformed
 
     private void unoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unoActionPerformed
-       teclado=teclado+"1";
+    	if (teclado.equals("0")) {
+        	teclado="";
+        }
+    	teclado=teclado+"1";
         numeros.setText(teclado);
     }//GEN-LAST:event_unoActionPerformed
 
     private void dosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dosActionPerformed
-       teclado=teclado+"2";
+    	if (teclado.equals("0")) {
+        	teclado="";
+        }
+    	teclado=teclado+"2";
         numeros.setText(teclado);
     }//GEN-LAST:event_dosActionPerformed
 
     private void tresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tresActionPerformed
-       teclado=teclado+"3";
+    	if (teclado.equals("0")) {
+        	teclado="";
+        }
+    	teclado=teclado+"3";
        numeros.setText(teclado);
     }//GEN-LAST:event_tresActionPerformed
 
     private void cuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuatroActionPerformed
-        teclado=teclado+"4";
+    	if (teclado.equals("0")) {
+        	teclado="";
+        }
+    	teclado=teclado+"4";
         numeros.setText(teclado);
     }//GEN-LAST:event_cuatroActionPerformed
 
     private void cincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cincoActionPerformed
-        teclado=teclado+"5";
+    	if (teclado.equals("0")) {
+        	teclado="";
+        }
+    	teclado=teclado+"5";
         numeros.setText(teclado);
     }//GEN-LAST:event_cincoActionPerformed
 
     private void seisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seisActionPerformed
-        teclado=teclado+"6";
+    	if (teclado.equals("0")) {
+        	teclado="";
+        }
+    	teclado=teclado+"6";
         numeros.setText(teclado);
     }//GEN-LAST:event_seisActionPerformed
 
     private void sieteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sieteActionPerformed
-        teclado=teclado+"7";
+    	if (teclado.equals("0")) {
+        	teclado="";
+        }
+    	teclado=teclado+"7";
         numeros.setText(teclado);
     }//GEN-LAST:event_sieteActionPerformed
 
     private void ochoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ochoActionPerformed
-        teclado=teclado+"8";
+    	if (teclado.equals("0")) {
+        	teclado="";
+        }
+    	teclado=teclado+"8";
         numeros.setText(teclado);
     }//GEN-LAST:event_ochoActionPerformed
 
     private void nueveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nueveActionPerformed
-        teclado=teclado+"9";
+    	if (teclado.equals("0")) {
+        	teclado="";
+        }
+    	teclado=teclado+"9";
         numeros.setText(teclado);
     }//GEN-LAST:event_nueveActionPerformed
 
@@ -393,18 +438,99 @@ public class calculadora extends javax.swing.JFrame {
         cadena=numeros.getText();
         
         if (cadena.length()<=0){
-            numeros.setText("0.");
+        	teclado="0.";
+        	numeros.setText(teclado);
         }
         else
             if(!existepunto(numeros.getText())) {
-        numeros.setText(numeros.getText()+".");
+            	teclado=numeros.getText()+".";
+        numeros.setText(teclado);
         }
     }//GEN-LAST:event_puntoActionPerformed
 
     private void clear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear1ActionPerformed
-            numeros.setText("");
+        teclado="0";    
+    	numeros.setText(teclado);
     }//GEN-LAST:event_clear1ActionPerformed
 
+    private void enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sieteActionPerformed
+        //calculo de operaciones
+    	double res=0;
+    	ArrayList<String> factor = new ArrayList<String>();
+    	ArrayList<String> factorAux = new ArrayList<String>();
+    	char c;
+    	int ant=0;
+    	String termino="", termino2="";
+    	
+    	//Separamos los factores
+    	for (int n = 0; n <teclado.length (); n++) { 
+    		c = teclado.charAt(n);
+    		if(c=='+' ||c=='-'||c=='*'||c=='/') {
+    			if(n>0) {
+    			factor.add(teclado.substring(ant, n));
+    			}
+    			factor.add(String.valueOf(c));
+    			ant=n+1;
+    		}
+    	}
+    	factor.add(teclado.substring(ant, teclado.length()));
+    	Iterator<String> it = factor.iterator();
+    	// Multiplicaciones y divisiones
+    	
+    	while(it.hasNext()){
+    		termino=it.next();
+    		if(!termino.equals("-")) {
+		    	if(it.hasNext()) {
+		    		termino2=it.next();
+		    		if(termino2.equals("*")) {
+		    			termino2=it.next();
+		    			res=Double.parseDouble(termino)*Double.parseDouble(termino2);
+		    			factorAux.add(String.valueOf(res));
+		    		}else if(termino2.equals("/")) {
+		    			termino2=it.next();
+		    			res=Double.parseDouble(termino)/Double.parseDouble(termino2);
+		    			factorAux.add(String.valueOf(res));
+		    		}else {
+		    			factorAux.add(String.valueOf(termino));
+		    			factorAux.add(String.valueOf(termino2));
+		    		}
+	    		}else {
+	    			factorAux.add(String.valueOf(termino));
+	    		}
+    		}else {
+    			factorAux.add(String.valueOf(termino));
+    		}
+    	}
+    	
+    	it = factorAux.iterator();
+    	termino=it.next();
+		if(termino.equals("-")) {
+			termino=it.next();
+			res=0-Double.parseDouble(termino);
+		}else {
+			res=Double.parseDouble(termino);
+		}
+    	
+    	// Sumas y restas
+    	while(it.hasNext()){
+    		termino=it.next();
+    		if(termino.equals("+")) {
+    			termino2=it.next();
+    			res=res+Double.parseDouble(termino2);
+    		}else if(termino.equals("-")) {
+    			termino2=it.next();
+    			res=res-Double.parseDouble(termino2);
+    		}
+    	}
+    	
+    	resultado.setText(String.valueOf(res));
+    	teclado=String.valueOf(res);    
+    	numeros.setText(teclado);
+    }//GEN-LAST:event_sieteActionPerformed
+    
+    private void resultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numerosActionPerformed
+        System.out.println();
+    }//GEN-LAST:event_numerosActionPerformed
     public static boolean existepunto(String cadena){
         boolean resulta;
         resulta=false;

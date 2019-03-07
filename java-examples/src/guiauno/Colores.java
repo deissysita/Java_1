@@ -2,7 +2,7 @@ package guiauno;
 
 import java.util.Scanner;
 
-public class colores {
+public class Colores {
    
     public static void main(String[] args) {
         int num1, num2;

@@ -22,7 +22,7 @@ public class Mercado {
                 valor=leer.nextDouble();
         System.out.println("Por favor digite la cantidad a llevar");
                 cantidad=leer.nextInt();
-        System.out.println("¿El producto pertenece a la canasta familiar? (S/N)");    
+        System.out.println("El producto pertenece a la canasta familiar? (S/N)");    
                 canasta=leer.next();
                 if(canasta.equals("S")) {
                 subtotal=(valor*cantidad)*iva;    

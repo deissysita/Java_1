@@ -10,13 +10,12 @@ public static void main(String[] args) {
         double comision,porcentaje,auxTra = 0,salarioNeto,totalDeve;
         double salarioBasico,sueldoDevegado,ventas,prestamos,totalDedu = 0;
         String respuesta,cedula,nombreEm;
-        //salarioBasico=589500;
         porcentaje=0.2;
         Scanner read = new Scanner(System.in);
             
         System.out.println("Bienvenido a sueldo \nEste programa valida el salario correspondiente de un vendedor");
         
-        System.out.println("Ingrese el salario básico actual");
+        System.out.println("Ingrese el salario bï¿½sico actual");
         salarioBasico=read.nextDouble();
         
             System.out.println("Ingrese su nombre por favor");

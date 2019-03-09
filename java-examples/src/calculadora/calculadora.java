@@ -2,6 +2,7 @@ package calculadora;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class calculadora extends javax.swing.JFrame {
     
@@ -39,6 +40,10 @@ public class calculadora extends javax.swing.JFrame {
         cero = new javax.swing.JButton();
         punto = new javax.swing.JButton();
         clear1 = new javax.swing.JButton();
+        operaciones.add("+");
+        operaciones.add("-");
+        operaciones.add("/");
+        operaciones.add("*");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -349,81 +354,61 @@ public class calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_clearActionPerformed
 
     private void ceroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceroActionPerformed
-        if (teclado.equals("0")) {
-        	teclado="";
-        }
+    	validarTextoCero();
     	teclado=teclado+"0";
         numeros.setText(teclado);
     }//GEN-LAST:event_ceroActionPerformed
 
     private void unoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unoActionPerformed
-    	if (teclado.equals("0")) {
-        	teclado="";
-        }
+    	validarTextoCero();
     	teclado=teclado+"1";
         numeros.setText(teclado);
     }//GEN-LAST:event_unoActionPerformed
 
     private void dosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dosActionPerformed
-    	if (teclado.equals("0")) {
-        	teclado="";
-        }
+    	validarTextoCero();
     	teclado=teclado+"2";
         numeros.setText(teclado);
     }//GEN-LAST:event_dosActionPerformed
 
     private void tresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tresActionPerformed
-    	if (teclado.equals("0")) {
-        	teclado="";
-        }
+    	validarTextoCero();
     	teclado=teclado+"3";
        numeros.setText(teclado);
     }//GEN-LAST:event_tresActionPerformed
 
     private void cuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuatroActionPerformed
-    	if (teclado.equals("0")) {
-        	teclado="";
-        }
+    	validarTextoCero();
     	teclado=teclado+"4";
         numeros.setText(teclado);
     }//GEN-LAST:event_cuatroActionPerformed
 
     private void cincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cincoActionPerformed
-    	if (teclado.equals("0")) {
-        	teclado="";
-        }
+    	validarTextoCero();
     	teclado=teclado+"5";
         numeros.setText(teclado);
     }//GEN-LAST:event_cincoActionPerformed
 
     private void seisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seisActionPerformed
-    	if (teclado.equals("0")) {
-        	teclado="";
-        }
+    	validarTextoCero();
     	teclado=teclado+"6";
         numeros.setText(teclado);
     }//GEN-LAST:event_seisActionPerformed
 
     private void sieteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sieteActionPerformed
-    	if (teclado.equals("0")) {
-        	teclado="";
-        }
+    	validarTextoCero();
     	teclado=teclado+"7";
         numeros.setText(teclado);
     }//GEN-LAST:event_sieteActionPerformed
 
     private void ochoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ochoActionPerformed
-    	if (teclado.equals("0")) {
-        	teclado="";
-        }
+    	validarTextoCero();
     	teclado=teclado+"8";
         numeros.setText(teclado);
     }//GEN-LAST:event_ochoActionPerformed
 
     private void nueveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nueveActionPerformed
-    	if (teclado.equals("0")) {
-        	teclado="";
-        }
+    	validarTextoCero();
     	teclado=teclado+"9";
         numeros.setText(teclado);
     }//GEN-LAST:event_nueveActionPerformed
@@ -465,7 +450,7 @@ public class calculadora extends javax.swing.JFrame {
     	//Separamos los factores
     	for (int n = 0; n <teclado.length (); n++) { 
     		c = teclado.charAt(n);
-    		if(c=='+' ||c=='-'||c=='*'||c=='/') {
+    		if(operaciones.contains(String.valueOf(c))) {
     			if(n>0) {
     			factor.add(teclado.substring(ant, n));
     			}
@@ -579,6 +564,11 @@ public class calculadora extends javax.swing.JFrame {
             }
         });
     }
+    private void validarTextoCero() {
+    	if (teclado.equals("0")) {
+        	teclado="";
+        }
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cero;
@@ -601,5 +591,6 @@ public class calculadora extends javax.swing.JFrame {
     private javax.swing.JButton suma;
     private javax.swing.JButton tres;
     private javax.swing.JButton uno;
+    private List<String> operaciones = new ArrayList<String>();
     // End of variables declaration//GEN-END:variables
 }

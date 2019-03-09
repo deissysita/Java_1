@@ -84,13 +84,11 @@ public class Calculadora {
                 break;
             
             case 7:
-            {
             	System.out.println("Por favor digite el número");
                 num1= captura .nextInt();
                 double raiz=Math.sqrt(num1);
                 System.out.println("La raiz es " + raiz);
                 break;
-            }
             default: 
                 System.out.println("¡Error, opción no valida!");
         }

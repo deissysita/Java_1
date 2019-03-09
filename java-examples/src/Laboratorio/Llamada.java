@@ -17,7 +17,7 @@ public class Llamada {
 		 */
 		System.out.println("Bienvenido a su programa costo de llamada");
 		System.out.println("Este programa le permite calcular el valor de su llamada.  Presione S para salir.");
-		System.out.println("(Primero deberá parametrizar el valor del minuto y la tarifa fija)");
+		System.out.println("(Primero deberï¿½ parametrizar el valor del minuto y la tarifa fija)");
 		System.out.println("Tarifa minuto: ");
 		minuto = captura.nextDouble();
 		System.out.println("Tarifa fija (de 1 a 3 minutos): ");
@@ -25,18 +25,17 @@ public class Llamada {
 		do {
 			System.out.println("Digite los minutos de su llamada: ");
 			opcion = captura.next();
+			min=0;
 			try {
-				if (!opcion.equals("S")) {
 					min = Double.parseDouble(opcion);
-				}
 			} catch (Exception e) {
-				System.out.println("No es un número, intente nuevamente ");
+				System.out.println("No es un nÃºmero, intente nuevamente ");
 			}
 
 			double a1 = 0;
 			double tol = 0;
 
-			if (min <= 3) {
+			if (min <= 3 && min>0) {
 				System.out.println("El valor de su llamada es de $" + String.valueOf(fija));
 			} else if (min > 3) {
 				a1 = min - 3;
